@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#f8fafc]"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | Your Business. Your Brand. Your Store.</title>
+    <meta name="description" content="NEXORA is the premium multi-vendor e-commerce SaaS platform connecting high-growth brands and curious shoppers worldwide.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'&gt;&lt;polygon points='12 2 2 7 12 12 22 7 12 2'&gt;&lt;/polygon&gt;&lt;polyline points='2 17 12 22 22 17'&gt;&lt;/polyline&gt;&lt;polyline points='2 12 12 17 22 12'&gt;&lt;/polyline&gt;&lt;/svg&gt;">
+    
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+    
+    <!-- NEXORA Styles -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body class="h-full text-slate-800 antialiased selection:bg-blue-600 selection:text-white bg-slate-50">
+    <div id="root" class="min-h-full flex flex-col">
+    <div class="min-h-screen flex flex-col bg-slate-50 text-slate-800">
+      
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-all">
+      <!-- Live Prototype Banner -->
+      <div class="bg-slate-900 text-white text-xs px-4 py-1.5 flex items-center justify-between">
+        <div class="flex items-center gap-2 overflow-x-auto py-0.5">
+          <span class="font-semibold text-blue-400 uppercase tracking-wider text-[11px] flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+            NEXORA Live Prototype:
+          </span>
+          <span class="text-slate-300 hidden sm:inline">Frontend prototype with dynamic state &amp; demo role switching</span>
+        </div>
+        
+        <!-- Role Switcher -->
+        <div class="relative flex items-center gap-2">
+          <span class="text-slate-400 hidden md:inline text-[11px]">View As:</span>
+          <div class="relative" id="role-switcher-container">
+            <button onclick="toggleDropdown('role-dropdown')" class="flex items-center gap-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 px-2.5 py-0.5 rounded text-[11px] font-medium border border-slate-700 transition-colors">
+              <span class="text-blue-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg></span>
+              <span class="capitalize">seller Mode</span>
+              <span class="text-slate-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+            </button>
+            <div id="role-dropdown" class="hidden absolute right-0 mt-1.5 w-44 bg-white text-slate-800 rounded-lg shadow-xl border border-slate-200 py-1.5 z-50 animate-fade-in">
+              <div class="px-3 py-1 text-[10px] uppercase tracking-wider font-semibold text-slate-400 border-b border-slate-100">
+                Switch Demo Account
+              </div>
+              <button onclick="switchRole('buyer')" class="w-full text-left px-3 py-1.5 text-xs hover:bg-slate-50 flex items-center justify-between text-slate-700">
+                <span>Shopper (Marcus)</span>
+                
+              </button>
+              <button onclick="switchRole('seller')" class="w-full text-left px-3 py-1.5 text-xs hover:bg-slate-50 flex items-center justify-between text-blue-600 font-semibold bg-blue-50/50">
+                <span>Seller (Elena)</span>
+                <span class="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+              </button>
+              <button onclick="switchRole('admin')" class="w-full text-left px-3 py-1.5 text-xs hover:bg-slate-50 flex items-center justify-between text-slate-700">
+                <span>Admin (David)</span>
+                
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16 gap-4">
+          <!-- Logo -->
+          <div class="flex items-center gap-8">
+            <a href="#/" class="flex items-center gap-2.5 group">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">NEXORA</span>
+                <span class="text-[10px] font-medium text-slate-600 -mt-1 hidden sm:block tracking-wide">Your Business. Your Brand.</span>
+              </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-1">
+              <a href="#/marketplace" class="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-slate-600 hover:text-slate-900 hover:bg-slate-50">Marketplace</a>
+              <a href="#stores" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">Featured Stores</a>
+              <a href="#how-it-works" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">How It Works</a>
+            </nav>
+          </div>
+
+          <!-- Header Search -->
+          <div class="hidden lg:flex flex-1 max-w-md mx-4">
+            <form onsubmit="handleNavSearch(event)" class="relative w-full">
+              <input type="text" id="nav-search-input" placeholder="Search products, brands, or categories..." class="w-full bg-slate-100 hover:bg-slate-50 focus:bg-white text-slate-900 placeholder-slate-400 pl-10 pr-4 py-2 rounded-xl text-sm border border-transparent focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all">
+              <span class="text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+            </form>
+          </div>
+
+          <!-- Right Actions -->
+          <div class="flex items-center gap-3">
+            <a href="#/create-company" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-slate-900 hover:bg-blue-600 text-white transition-all shadow-sm shadow-slate-900/10">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path><path d="M2 7h20"></path></svg>
+              <span>Start Your Business</span>
+            </a>
+            
+            <!-- Cart Icon -->
+            <a href="#/cart" class="relative p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl transition-colors" aria-label="View Cart">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+              <span class="absolute -top-1 -right-1 bg-blue-600 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white shadow-sm">1</span>
+            </a>
+
+            <!-- User Menu -->
+            
+              <div class="relative" id="user-menu-container">
+                <button onclick="toggleDropdown('user-dropdown')" class="flex items-center gap-2 p-1.5 hover:bg-slate-100 rounded-xl transition-colors">
+                  <img src="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563eb'&gt;&lt;circle cx='12' cy='7' r='4' fill='%2393c5fd'/&gt;&lt;path d='M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2' fill='%232563eb'/&gt;&lt;/svg&gt;" onerror="this.onerror=null; this.src='data:image/svg+xml,&lt;svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'%232563eb\'&gt;&lt;circle cx=\'12\' cy=\'7\' r=\'4\' fill=\'%2393c5fd\'/&gt;&lt;path d=\'M4 21v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2\' fill=\'%232563eb\'/&gt;&lt;/svg&gt;'" alt="Elena Rostova" class="w-8 h-8 rounded-full object-cover ring-2 ring-slate-200">
+                  <span class="text-slate-500 hidden sm:block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+                </button>
+                <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 py-2 z-50 animate-fade-in">
+                  <div class="px-4 py-3 border-b border-slate-100">
+                    <p class="text-sm font-semibold text-slate-900">Elena Rostova</p>
+                    <p class="text-xs text-slate-500 truncate">elena@aethersound.io</p>
+                    <div class="mt-1.5">
+                      <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium bg-blue-50 text-blue-700 capitalize border border-blue-200/50">seller Account</span>
+                    </div>
+                  </div>
+                  <div class="py-1">
+                    <a href="#/orders" class="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
+                      <span>Customer Orders</span>
+                    </a>
+                    
+                      <div class="border-t border-slate-100 my-1"></div>
+                      <div class="px-4 py-1 text-[11px] font-semibold text-slate-400 uppercase tracking-wider">Seller Tools</div>
+                      <a href="#/seller/dashboard" class="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg><span>Seller Dashboard</span></a>
+                      <a href="#/seller/products" class="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m7.5 4.27 9 5.15"></path><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg><span>My Products</span></a>
+                      <a href="#/seller/products/new" class="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="12" cy="12" r="10"></circle><path d="M8 12h8"></path><path d="M12 8v8"></path></svg><span>Add Product</span></a>
+                      <a href="#/seller/profile" class="flex items-center gap-2.5 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"></path><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"></path><path d="M2 7h20"></path></svg><span>Business Profile</span></a>
+                    
+                    
+                  </div>
+                  <div class="border-t border-slate-100 pt-1">
+                    <button onclick="handleLogout()" class="w-full flex items-center gap-2.5 px-4 py-2 text-sm text-rose-600 hover:bg-rose-50 text-left">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" x2="9" y1="12" y2="12"></line></svg>
+                      <span>Sign Out</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            
+
+            <!-- Mobile Menu Toggle -->
+            <button onclick="toggleMobileNav()" class="md:hidden p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-xl">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-nav-drawer" class="hidden md:hidden border-t border-slate-200 py-4 space-y-4 animate-fade-in">
+          <form onsubmit="handleNavSearch(event)" class="relative">
+            <input type="text" id="mobile-search-input" placeholder="Search products..." class="w-full bg-slate-100 text-slate-900 placeholder-slate-400 pl-10 pr-4 py-2 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <span class="text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></span>
+          </form>
+          <nav class="flex flex-col space-y-1">
+            <a href="#/marketplace" onclick="toggleMobileNav()" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">Marketplace</a>
+            <a href="#/cart" onclick="toggleMobileNav()" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100 flex items-center justify-between">
+              <span>Shopping Cart</span>
+              <span class="bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded-full text-xs">1</span>
+            </a>
+            <a href="#/orders" onclick="toggleMobileNav()" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-100">My Orders</a>
+            <a href="#/create-company" onclick="toggleMobileNav()" class="px-3 py-2 rounded-lg text-sm font-medium text-blue-600 bg-blue-50 hover:bg-blue-100">Start Your Business</a>
+            <a href="#/seller/dashboard" onclick="toggleMobileNav()" class="px-3 py-2 rounded-lg text-sm font-medium text-slate-900 hover:bg-slate-100">Seller Dashboard</a>
+            
+          </nav>
+        </div>
+      </div>
+    </header>
+  
+      <main class="flex-1">
+        
+    <div class="bg-white border-b border-slate-200/80 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">Shopping Cart</h1>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Review your items across verified independent merchants.</p>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+        <!-- Cart Items List -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="bg-white rounded-3xl border border-slate-200/80 shadow-subtle divide-y divide-slate-100 overflow-hidden">
+            
+              <div class="p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                <div class="flex items-center gap-4">
+                  <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="Aether Horizon X9 Wireless Planar Headphones" class="w-20 h-20 rounded-2xl object-cover bg-slate-100 shrink-0">
+                  <div>
+                    <span class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 block">Aether Soundworks</span>
+                    <a href="#/product/prod-1" class="font-semibold text-sm text-slate-900 hover:text-blue-600 line-clamp-1">Aether Horizon X9 Wireless Planar Headphones</a>
+                    <div class="mt-1 flex items-center gap-2">
+                      
+    <span title="Brand New Sealed in Box with 3-year Manufacturer Warranty" class="inline-flex items-center gap-1 rounded-full font-medium transition-colors text-xs px-2.5 py-0.5 bg-blue-50 text-blue-700 border border-blue-200/60">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-blue-600"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path></svg>
+      <span>New</span>
+    </span>
+  
+                      <span class="text-xs font-bold text-slate-900 font-mono">$649</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-6 self-end sm:self-center">
+                  <div class="flex items-center border border-slate-200 rounded-xl bg-slate-50">
+                    <button onclick="updateCartItemQty('prod-1', 0)" class="px-2.5 py-1 text-slate-600 hover:text-slate-900 font-bold">-</button>
+                    <span class="px-2.5 text-xs font-semibold text-slate-900">1</span>
+                    <button onclick="updateCartItemQty('prod-1', 2)" class="px-2.5 py-1 text-slate-600 hover:text-slate-900 font-bold">+</button>
+                  </div>
+                  <span class="font-bold text-slate-900 font-mono text-sm w-20 text-right">$649</span>
+                  <button onclick="removeCartItem('prod-1')" class="text-slate-400 hover:text-rose-600 p-1 transition-colors" title="Remove item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="3 6h18"></path><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"></path><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"></path><line x1="10" x2="10" y1="11" y2="17"></line><line x1="14" x2="14" y1="11" y2="17"></line></svg>
+                  </button>
+                </div>
+              </div>
+            
+          </div>
+
+          <!-- Coupon Code Box -->
+          <div class="bg-white rounded-2xl border border-slate-200/80 p-5 shadow-subtle flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+              <span class="text-blue-600"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"></path><circle cx="7" cy="7" r=".5" fill="currentColor"></circle></svg></span>
+              <span class="text-xs font-semibold text-slate-700">Have a promotional coupon?</span>
+              <span class="text-[11px] text-slate-400 hidden sm:inline">(Try "NEXORA10")</span>
+            </div>
+            <form onsubmit="handleApplyCoupon(event)" class="flex gap-2 w-full sm:w-auto">
+              <input type="text" id="coupon-code-input" placeholder="NEXORA10" class="uppercase text-xs bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 w-32 focus:outline-none focus:ring-2 focus:ring-blue-500 font-mono">
+              <button type="submit" class="bg-slate-900 hover:bg-blue-600 text-white text-xs font-semibold px-4 py-2 rounded-xl transition-colors">Apply</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Order Summary Card -->
+        <div class="bg-white rounded-3xl border border-slate-200/80 p-6 shadow-card space-y-6">
+          <h3 class="font-extrabold text-base text-slate-900 tracking-tight pb-3 border-b border-slate-100">Order Summary</h3>
+          <div class="space-y-3 text-xs">
+            <div class="flex justify-between text-slate-600">
+              <span>Subtotal (1 items)</span>
+              <span class="font-mono font-semibold text-slate-900">$649.00</span>
+            </div>
+            <div class="flex justify-between text-slate-600">
+              <span>Standard Shipping</span>
+              <span class="font-mono font-semibold text-slate-900"><span class="text-emerald-600">FREE</span></span>
+            </div>
+            <div class="flex justify-between text-slate-600">
+              <span>Estimated Sales Tax (8%)</span>
+              <span class="font-mono font-semibold text-slate-900">$51.92</span>
+            </div>
+            
+            <div class="pt-3 border-t border-slate-100 flex justify-between items-baseline text-sm">
+              <span class="font-extrabold text-slate-900">Total</span>
+              <span class="font-black text-xl text-slate-900 font-mono">$700.92</span>
+            </div>
+          </div>
+
+          <button onclick="openCheckoutModal()" class="w-full py-3.5 px-6 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md shadow-blue-600/30 transition-all flex items-center justify-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><rect width="20" height="14" x="2" y="5" rx="2"></rect><line x1="2" x2="22" y1="10" y2="10"></line></svg>
+            <span>Proceed to Checkout</span>
+          </button>
+
+          <div class="text-[11px] text-slate-400 space-y-1.5 pt-2">
+            <p class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-slate-500"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> 256-bit encrypted checkout</p>
+            <p class="flex items-center gap-1.5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 text-slate-500"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path><circle cx="17" cy="18" r="2"></circle><circle cx="7" cy="7" r="2"></circle></svg> Free delivery on orders over $150</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+      </main>
+      
+    <footer class="bg-slate-900 text-slate-400 text-sm mt-auto border-t border-slate-800">
+      <!-- Trust Banner -->
+      <div class="border-b border-slate-800/80 bg-slate-950/40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm">Verified Multi-Vendor Platform</h4>
+                <p class="text-xs text-slate-400">Every merchant storefront is verified for quality and authentic goods.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm">New &amp; Certified Used Quality</h4>
+                <p class="text-xs text-slate-400">Clear condition transparency with warranties and return protection.</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"></rect><rect width="20" height="8" x="2" y="14" rx="2" ry="2"></rect><line x1="6" x2="6.01" y1="6" y2="6"></line><line x1="6" x2="6.01" y1="18" y2="18"></line></svg>
+              </div>
+              <div>
+                <h4 class="text-white font-semibold text-sm">Modern Static &amp; SaaS Architecture</h4>
+                <p class="text-xs text-slate-400">Vanilla HTML5, CSS3 &amp; JS. Direct file:// browser execution ready.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Links & Newsletter -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+          <div class="lg:col-span-2 space-y-4">
+            <a href="#/" class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              </div>
+              <span class="font-extrabold text-2xl tracking-tight text-white">NEXORA</span>
+            </a>
+            <p class="text-slate-300 text-sm max-w-sm font-medium">Your Business. Your Brand. Your Store.</p>
+            <p class="text-slate-400 text-xs leading-relaxed max-w-sm">
+              NEXORA empowers modern merchants, independent brands, and collectors to launch their custom digital storefronts and reach discerning buyers worldwide through a unified multi-vendor SaaS experience.
+            </p>
+            <div class="pt-2" id="footer-newsletter-container">
+              <h5 class="text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Stay Ahead of Product Drops</h5>
+              <form onsubmit="handleNewsletter(event)" class="flex gap-2 max-w-sm">
+                <input type="email" id="footer-newsletter-email" required="" placeholder="Enter your email address" class="flex-1 bg-slate-800/80 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-500 text-white px-3.5 py-2 rounded-xl text-xs font-semibold transition-colors flex items-center gap-1 shadow-sm shadow-blue-600/30">
+                  <span>Join</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-4">Marketplace</h4>
+            <ul class="space-y-2.5 text-xs">
+              <li><a href="#/marketplace" class="hover:text-white transition-colors">All Products</a></li>
+              <li><a href="#/marketplace?category=audio" class="hover:text-white transition-colors">Pro Audio &amp; Hi-Fi</a></li>
+              <li><a href="#/marketplace?category=electronics" class="hover:text-white transition-colors">Electronics &amp; Computing</a></li>
+              <li><a href="#/marketplace?category=workspace" class="hover:text-white transition-colors">Minimalist Workspace</a></li>
+              <li><a href="#/marketplace?category=timepieces" class="hover:text-white transition-colors">Timepieces &amp; Watches</a></li>
+              <li><a href="#/marketplace?condition=Used" class="hover:text-white transition-colors text-amber-400">Certified Pre-Owned (Used)</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-4">For Entrepreneurs</h4>
+            <ul class="space-y-2.5 text-xs">
+              <li><a href="#/create-company" class="hover:text-white transition-colors font-semibold text-blue-400">Launch Your Storefront</a></li>
+              <li><a href="#/seller/dashboard" class="hover:text-white transition-colors">Seller Dashboard</a></li>
+              <li><a href="#/seller/products/new" class="hover:text-white transition-colors">List a New Product</a></li>
+              <li><a href="#/seller/profile" class="hover:text-white transition-colors">Custom Branding Studio</a></li>
+              <li><a href="#/admin/dashboard" class="hover:text-white transition-colors text-indigo-400">Platform Admin Area</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-semibold text-xs uppercase tracking-wider mb-4">Platform &amp; Engine</h4>
+            <ul class="space-y-2.5 text-xs">
+              <li><span class="text-slate-400">Architecture: HTML5 + CSS3 + Vanilla JS</span></li>
+              <li><span class="text-slate-400">Execution: 100% Offline / file:// Ready</span></li>
+              <li><span class="text-slate-400">State: Browser LocalStorage</span></li>
+              <li><span class="text-slate-400">Zero Dependencies / No Node.js</span></li>
+              <li><span class="text-emerald-400 font-semibold">Production Ready v1.0.0</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <p>© 2026 NEXORA SaaS Inc. All rights reserved.</p>
+          <div class="flex items-center gap-6">
+            <span>Built with precision &amp; elegance</span>
+            <span class="flex items-center gap-1 text-slate-400">
+              Made with <span class="text-rose-500"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg></span> for modern commerce
+            </span>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+    </div>
+  </div>
+    <div id="toast-container" class="toast-container" aria-live="polite"></div>
+    <div id="modal-container"></div>
+    
+    <!-- NEXORA Vanilla JS Engine -->
+    <script src="js/script.js" defer=""></script>
+  
+
+<div id="nexora-custom-cursor" class="fixed inset-0 pointer-events-none z-[99999] opacity-0 transition-opacity duration-300">
+      <div id="cursor-ring" class="fixed top-0 left-0 rounded-full pointer-events-none border border-blue-500/70 bg-transparent shadow-[0_0_14px_rgba(37,99,235,0.3)] transition-[width,height,margin,border-color,background-color,box-shadow] duration-200 ease-out" style="width: 32px; height: 32px; margin-top: -16px; margin-left: -16px; transform: translate3d(-100px, -100px, 0px);"></div>
+      <div id="cursor-dot" class="fixed top-0 left-0 rounded-full bg-blue-600 shadow-[0_0_8px_rgba(37,99,235,0.9)] pointer-events-none" style="width: 6px; height: 6px; margin-top: -3px; margin-left: -3px; transform: translate3d(-100px, -100px, 0px);"></div>
+    </div></body></html>
