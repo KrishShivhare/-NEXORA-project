@@ -3,7 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://krishshivhare.github.io/NEXORA",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
